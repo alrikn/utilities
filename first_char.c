@@ -1,12 +1,13 @@
 /*
-** EPITECH PROJECT, 2024
-** my_top
+** EPITECH PROJECT, 2025
+** minishell1
 ** File description:
-** my_move_to_char
+** first_char
 */
 
-#include <time.h>
-char *my_move_to_char(const char *str, char c)
+#include <stdio.h>
+
+char *first_char(const char *str, const char c)
 {
     if (!str)
         return NULL;
@@ -16,8 +17,7 @@ char *my_move_to_char(const char *str, char c)
         }
         str++;
     }
-    if (c == '\0') {
+    if (c == '\0')
         return (char *)str;
-    }
     return NULL;
 }

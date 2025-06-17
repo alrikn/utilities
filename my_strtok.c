@@ -4,8 +4,24 @@
 ** File description:
 ** my_strtok
 */
+
 #include <unistd.h>
-#include "./../../include/my.h"
+
+static char *my_move_to_char(const char *str, char c)
+{
+    if (!str)
+        return NULL;
+    while (*str) {
+        if (*str == c) {
+            return (char *)str;
+        }
+        str++;
+    }
+    if (c == '\0') {
+        return (char *)str;
+    }
+    return NULL;
+}
 
 char *my_strtok(char *str, const char *delim)
 {

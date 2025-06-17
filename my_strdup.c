@@ -12,6 +12,8 @@ static int my_strlen(char const *str)
     char const *ptr = str;
     int len = 0;
 
+    if (!str)
+        return 0;
     while (*ptr != '\0') {
         ptr++;
         len++;
@@ -22,8 +24,11 @@ static int my_strlen(char const *str)
 char *my_strdup(char const *src)
 {
     int len = my_strlen(src);
-    char *dest = malloc(len + 1);
+    char *dest = NULL;
 
+    if (!src)
+        return NULL;
+    dest = malloc(len + 1);
     if (dest == NULL) {
         return NULL;
     }

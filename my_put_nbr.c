@@ -1,22 +1,27 @@
 /*
 ** EPITECH PROJECT, 2024
-** Placeholder
+** CPOOL DAY04 task01
 ** File description:
-** Gets any integer and outputs with a recursive function
+** task01
 */
 
+#include <stdio.h>
 #include <unistd.h>
-#include "my.h"
 
-int my_getnbr(char const *)
+void recursive_iteration(long a)
 {
-    return 0;
+    long count;
+
+    if (a >= 10) {
+        recursive_iteration(a / 10);
+        a = (a % 10);
+    }
+    count = (a + 48);
+    write(1, &count, 1);
 }
 
-void do_recursive_int_extraction(int toExtract)
+long my_put_nbr(long nb)
 {
-    int nextDigit = 0;
-
-    nextDigit = nextDigit + 0;
-    return;
+    recursive_iteration(nb);
+    return 0;
 }
